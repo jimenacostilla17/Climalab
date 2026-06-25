@@ -1,45 +1,90 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import {
+  Link,
+  useLocation,
+} from "react-router-dom";
+
+import logo from "../img/logo.jpeg";
 
 export default function Navbar() {
+  const [scroll, setScroll] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScroll(window.scrollY > 80);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () =>
+      window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const textColor =
+    location.pathname !== "/"
+      ? "text-[#08224C]"
+      : scroll
+      ? "text-[#08224C]"
+      : "text-white";
+
   return (
-    <nav className="fixed top-5 left-1/2 -translate-x-1/2 w-[92%] max-w-7xl z-50">
-      <div className="bg-white rounded-full shadow-xl px-8 py-4">
+    <nav
+      className={`fixed top-0 w-full z-[9999] transition-all duration-500 ${
+        location.pathname !== "/"
+          ? "bg-white shadow-lg py-3"
+          : scroll
+          ? "bg-white shadow-lg py-3"
+          : "bg-transparent py-5"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
 
-        <div className="flex items-center justify-between">
+        {/* Logo */}
+        <Link to="/">
+          <img
+            src={logo}
+            alt="ClimaLab"
+            className="h-16"
+          />
+        </Link>
 
-          <h1 className="text-2xl font-bold">
-  ClimLab
-</h1>
+        {/* Menu */}
+        <div className="hidden md:flex gap-8">
+          <Link
+            to="/"
+            className={`font-medium transition hover:text-[#289E2B] ${textColor}`}
+          >
+            Inicio
+          </Link>
 
-          <ul className="flex gap-8 font-semibold">
+          <Link
+            to="/nosotros"
+            className={`font-medium transition hover:text-[#289E2B] ${textColor}`}
+          >
+            Nosotros
+          </Link>
 
-            <li>
-              <Link to="/">Inicio</Link>
-            </li>
+          <Link
+            to="/servicios"
+            className={`font-medium transition hover:text-[#289E2B] ${textColor}`}
+          >
+            Servicios
+          </Link>
 
-            <li>
-              <Link to="/nosotros">Nosotros</Link>
-            </li>
-
-            <li>
-              <Link to="/servicios">Servicios</Link>
-            </li>
-
-            <li>
-              <Link to="/clientes">Clientes</Link>
-            </li>
-
-            <li>
-              <Link to="/testimonios">Testimonios</Link>
-            </li>
-
-            <li>
-              <Link to="/faq">FAQ</Link>
-            </li>
-
-          </ul>
-
+          <Link
+            to="/clientes"
+            className={`font-medium transition hover:text-[#289E2B] ${textColor}`}
+          >
+            Clientes
+          </Link>
         </div>
+
+        {/* Botón */}
+        <button className="bg-[#289E2B] hover:bg-green-700 text-white px-6 py-3 rounded-full transition">
+          Contacto
+        </button>
+
       </div>
     </nav>
   );
