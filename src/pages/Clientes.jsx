@@ -51,11 +51,11 @@ export default function Clientes() {
       {/* HERO */}
       <section className="relative min-h-screen overflow-hidden flex items-center justify-center">
         {/* Fondo */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#08224C] via-[#05579F] to-[#0499DA]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#ECCF12] via-[#E6A513] to-[#d8940f]" />
 
         {/* Luces decorativas */}
         <div className="absolute top-20 left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-[#289E2B]/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-[#E6A513]/20 rounded-full blur-3xl" />
 
         {/* Contenido */}
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center text-white">
@@ -162,9 +162,9 @@ export default function Clientes() {
                 className="group bg-white border border-gray-100 rounded-3xl p-8 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
               >
                 <div className="flex items-start gap-5">
-                  <div className="min-w-[60px] h-[60px] rounded-2xl bg-gradient-to-br from-[#0499DA] to-[#05579F] flex items-center justify-center text-white text-2xl">
-                    <FaBuilding />
-                  </div>
+                  <div className="min-w-[60px] h-[60px] rounded-2xl bg-gradient-to-br from-[#ECCF12] to-[#E6A513] flex items-center justify-center text-white text-2xl">
+  <FaBuilding />
+</div>
 
                   <div>
                     <span className="text-sm font-semibold text-[#289E2B] uppercase">
@@ -179,7 +179,7 @@ export default function Clientes() {
                       {caso.descripcion}
                     </p>
 
-                    <button className="mt-6 inline-flex items-center gap-2 bg-[#05579F] hover:bg-[#08224C] text-white px-5 py-3 rounded-xl font-medium transition">
+                    <button className="mt-6 inline-flex items-center gap-2 bg-[#E6A513] hover:bg-[#ECCF12] text-[#ffffff] px-5 py-3 rounded-xl font-medium transition">
                       Ver caso de éxito
 
                       <FaArrowRight className="group-hover:translate-x-1 transition-transform" />

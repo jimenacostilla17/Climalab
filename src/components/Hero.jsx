@@ -14,8 +14,6 @@ import oficina from "../img/oficina.jpeg";
 export default function Home() {
   const menuItems = [
     { icon: <FaUsers />, text: "Nosotros" },
-    { icon: <FaChartLine />, text: "Análisis" },
-    { icon: <FaCloudSun />, text: "Clima" },
     { icon: <FaBuilding />, text: "Clientes" },
     { icon: <FaComment />, text: "Testimonios" },
     { icon: <FaCircleQuestion />, text: "FAQ" },
@@ -58,8 +56,7 @@ export default function Home() {
           </h1>
 
           <p className="text-lg md:text-xl mb-8">
-            Plataforma especializada en análisis, monitoreo y
-            visualización de datos climáticos.
+            Brindamos soluciones integrales en Recursos Humanos para potenciar equipos, fortalecer el liderazgo y mejorar el desempeño organizacional.
           </p>
 
           <button className="bg-[#289E2B] hover:bg-[#05579F] transition px-8 py-3 rounded-full font-semibold">
@@ -91,7 +88,7 @@ export default function Home() {
 
       {/* MENU SERVICIOS */}
       <section className="relative -mt-16 z-20">
-        <div className="bg-white w-[90%] max-w-7xl mx-auto rounded-3xl shadow-xl p-8">
+        <div className="bg-white w-[90%] max-w-7xl mx-auto rounded-3xl shadow-xl p-6">
           <div className="flex flex-wrap justify-center gap-10">
             {menuItems.map((item, index) => (
               <div key={index} className="text-center w-28">
